@@ -7,12 +7,12 @@ In the format NxV where 0 is the number of the joystick (numbers in diagram belo
 and V is the value of the joystick's position, positive or negative (as in diagram).
 
 
-     -1                -2
-      ^                 ^
-      |                 |
--0 <--x--> +0     -3 <--x--> +3
-      |                 |
-      v                 v
-     +1                +2
+           -1                 -2
+            ^                  ^
+            |                  |
+      -0 <--x--> +0      -3 <--x--> +3
+            |                  |
+            v                  v
+           +1                 +2
       
-      L                 R
+            L                  R
