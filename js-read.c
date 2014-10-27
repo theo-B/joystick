@@ -8,7 +8,8 @@
 #define JS_EVENT_AXIS 0x02
 
 // Function that opens the joystick
-int open_joystick(char *device_name) {
+int open_joystick(char *device_name)
+{
     int fd = -1;
     // If there is no device, return -1
     if (device_name == NULL) {
@@ -29,18 +30,21 @@ int open_joystick(char *device_name) {
 }
 
 
-int main() {
+int main()
+{
 
-    int fd;
     struct js_event jse; // Creates joystick event structure
 
     // Open the device and print its information
-    fd = open_joystick("/dev/input/js0");
+    int fd = open_joystick("/dev/input/js0");
 
     // Loop the event processing
-    while (1) {
-        while (read(fd, &jse, sizeof(jse)) > 0) {
-            if ( jse.type == JS_EVENT_AXIS ) {
+    while (1)
+    {
+        while (read(fd, &jse, sizeof(jse)) > 0)
+        {
+            if ( jse.type == JS_EVENT_AXIS )
+            {
                  // Motor Control
                  printf("%dx%d\n",jse.number,jse.value);
                  fflush(stdout);
